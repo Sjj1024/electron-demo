@@ -11,10 +11,13 @@ app.on('ready', ()=>{
     mainWindow = new BrowserWindow({
         width:800,
         height:400,
-        webPreferences: {nodeIntegration:true}
+        webPreferences: {
+            nodeIntegration:true, // 集成node环境
+            enableRemoteModule: true   // 使用remote模块
+        }
     })  // 设置窗口尺寸
     mainWindow.loadFile('index.html')  // 加载显示的网页
-    // mainWindow.webContents.openDevTools()  // 打开开发者模式，出现调试模式
+    mainWindow.webContents.openDevTools()  // 打开开发者模式，出现调试模式
     mainWindow.on('close', ()=>{
         mainWindow = null  // 监听关闭窗口事件
     })
