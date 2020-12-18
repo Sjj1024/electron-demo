@@ -6,6 +6,7 @@ window.onload = function () {
         newWin = new BrowserWindow({
             width: 600,
             height: 300,
+            nodeIntegration:true, // 集成node环境
         })
         newWin.loadFile("sub2.html")
         newWin.on("close", ()=>{
